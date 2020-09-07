@@ -29,6 +29,7 @@ from face.views import new_feed
 from face.views import new_page
 from face.views import remove_feed, edit_feed
 from face.views import remove_page, edit_page
+from face.views import remove_comment
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -51,6 +52,9 @@ urlpatterns = [
 
     path('pages/', pages),
     path('pages/new/', new_page),
+
+
+    path('feed/<pk>/comment/<commentpk>/remove/', remove_comment),
     
 
 ]

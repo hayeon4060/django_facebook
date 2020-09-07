@@ -164,3 +164,17 @@ def edit_page(request, pk):
         return redirect('/pages/')
 
     return render(request, 'edit_page.html', {'page': page })
+
+
+def remove_comment(request, pk,commentpk):
+    comment = Comment.objects.get(pk=commentpk)
+
+    if request.method == 'POST':
+        if request.POST['password'] == comment.password:
+            comment.delete()
+            return redirect('../../../') 
+
+        else:
+            return redirect('/fail/')  # 비밀번호 오류 페이지 이동하기
+
+    return render(request, 'remove_comment.html', {'comment': comment})

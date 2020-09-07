@@ -210,8 +210,12 @@ button {
 </div>
 <div class="comment_list">
     {% for comment in feed.comments.all %}
-    <div class="comment"><span class="name">{{coment.author}}</span> {{comment.text}}</div>
-    <div class=“comment__date">{{comment.created_at}} <a href="코멘트삭제주소"><img src="/static/ic_delete.png" height="16px"></a></div>
+    <div class="comment"><span class="name">{{comment.author}}</span> {{comment.text}}</div>
+    <div class=“comment__date">{{comment.created_at}} 
+        
+       
+        
+        <a href="/feed/{{ feed.pk }}/comment/{{comment.pk}}/remove"><img src="/static/ic_delete.png" height="16px"></a></div>
     {% endfor %}
     <div class="form-wrapper">
         <span class="help">댓글</span>
