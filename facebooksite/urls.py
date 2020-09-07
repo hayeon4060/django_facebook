@@ -34,7 +34,7 @@ urlpatterns = [
 
     path('play/', play),
     path('play2/', play2),
-    path('dogeunchoi/profile/', my_profile),
+    path('hayeon/profile/', my_profile),
     path('event/', event),
     path('fail/', fail),
     path('help/', help),
